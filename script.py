@@ -1,6 +1,4 @@
-#!/usr/bin/python3
-
-import subprocess as sp
+mport subprocess as sp
 import argparse
 import sys
 
@@ -28,12 +26,15 @@ if count==int(_count):
     pass
 else:
     if int(count)-int(_count) == 0:
-        raise Exception("Oops!.... A single EFS is also not found to be mounted. Sorry!! Can't proceed ahead...")
+        print("Oops!.... A single EFS is also not found to be mounted. Sorry!! Can't proceed ahead...")
+        #raise Exception("Oops!.... A single EFS is also not found to be mounted. Sorry!! Can't proceed ahead...")
     elif int(count)-int(_count) == 1:
-        raise Exception("Oops!.... {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...".format(int(count)-int(_count)))
-    else: raise Exception("Oops!.... {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...".format(int(count)-int(_count)))
+        print("Oops!.... {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...")
+        #raise Exception("Oops!.... {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...".format(int(count)-int(_count)))
+    else: print("Oops!.... {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...")
 _,res=sp.getstatusoutput("hostname")
 if res==hostname:
     pass
 else:
-    raise Exception("Hostname not matched")
+    #raise Exception("Hostname not matched")
+    print("HOSTNAME NOT FOUND")
