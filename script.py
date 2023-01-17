@@ -23,8 +23,9 @@ for i in res:
 for i in _res:
     if i[1] == 'nfs4':
         count+=1
+_r=0
 if count==int(_count):
-    pass
+    _r+=1
 else:
     if int(count)-int(_count) == 0:
         print("Oops!.... A single EFS is also not found to be mounted. Sorry!! Can't proceed ahead...")
@@ -35,7 +36,9 @@ else:
     else: print("Oops!.... {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...")
 _,res=sp.getstatusoutput("hostname")
 if res==hostname:
-    pass
+    _r+=1
 else:
     #raise Exception("Hostname not matched")
     print("HOSTNAME NOT FOUND")
+if _r==2:
+    print(0)
