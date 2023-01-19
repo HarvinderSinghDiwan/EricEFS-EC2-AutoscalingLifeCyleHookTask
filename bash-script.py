@@ -21,3 +21,4 @@ else
 res=$(./script.py fre 4) && sudo  aws sns publish  --message "Failed to Launch instance having id ${id} ${res}"  --topic-arn arn:aws:sns:ap-south-1:118781765982:neng2 --region ap-south-1 && \
 sudo aws autoscaling complete-lifecycle-action --lifecycle-action-result ABANDON --instance-id $(cat ../instance-id) --lifecycle-hook-name con --auto-scaling-group-name efs --region ap-south-1; 
 fi
+
