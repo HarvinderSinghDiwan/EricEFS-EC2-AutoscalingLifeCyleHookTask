@@ -31,9 +31,9 @@ else:
         fres.append("A single EFS is also not found to be mounted.")
         #raise Exception("Oops!.... A single EFS is also not found to be mounted. Sorry!! Can't proceed ahead...")
     elif int(count)-int(_count) == 1:
-        fres.append("{} EFS seems to be missing or unmounted.".format(count-_count))
+        fres.append("{} EFS seems to be missing or unmounted.".format(count-(_count)))
         #raise Exception("Oops!.... {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...".format(int(count)-int(_count)))
-    else: fres.append(" {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...".format(count-_count))
+    else: fres.append(" {} EFS seems to be missing or unmounted. Sorry!! Can't proceed ahead...".format(count-(_count)))
 _,res=sp.getstatusoutput("hostname")
 if res==hostname:
     _r+=1
