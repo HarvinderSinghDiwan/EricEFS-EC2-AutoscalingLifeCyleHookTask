@@ -10,7 +10,7 @@ parser.add_argument('count', help='Number of nfs to be mounted')
 args = vars(parser.parse_args(sys.argv[1:]))
 
 hostname=args['hostname']
-_count=args['count']
+_count=int(args['count'])
 
 _,res=sp.getstatusoutput("df -hT")
 res=res.split("\n")
