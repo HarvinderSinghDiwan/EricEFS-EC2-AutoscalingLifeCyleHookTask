@@ -31,3 +31,4 @@ else
 sudo  aws sns publish  --message failureMessage --topic-arn $topicArn --region $region   && \
 sudo aws autoscaling complete-lifecycle-action --lifecycle-action-result ABANDON --instance-id $id --lifecycle-hook-name $hookName --auto-scaling-group-name asgName --region $region;
 fi
+
